@@ -20,7 +20,6 @@ export interface Contact {
 export class AppComponent implements OnInit {
   title = 'parallax';
   pageYOffset = window.scrollY;
-  // @Input() contactsList = JSON.stringify(contacts);
   @Input() contactsList = contacts;
 
 
@@ -30,9 +29,9 @@ export class AppComponent implements OnInit {
     window.addEventListener('scroll', this.doStuff);
     // console.log(contacts[0]);
     // const arr: Contact[] = this.contactsList;
-    for (let i = 0; i <= contacts.length; i++) {
-      console.log(contacts[i].id);
-    }
+    // for (let i = 0; i <= contacts.length; i++) {
+    //   console.log(contacts[i].id);
+    // }
   }
 
   doStuff() {

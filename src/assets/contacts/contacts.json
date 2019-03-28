@@ -51,7 +51,8 @@
 	"surname": "Caldwell",
 	"city": "Hong Kong",
 	"email": "c.c@gmail.com",
-	"phone": "+852 2153 9983"
+	"phone": "+852 2153 9983",
+	"active": false
 	},
 	{
 	"id": 7,
