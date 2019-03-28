@@ -1,119 +1,52 @@
 #milkyway {
-    height: 3600px;
-    overflow: hidden;
+    height: 10000px;
+    width: 100%;
+    /* overflow: hidden; */
     position: static;
-    
-}
-
-#milkyway-mobile {
-    display: none;
-    background: url(../assets/images/milkyway.jpg) no-repeat center bottom;
-    background-size: cover;
-    height: 768px;
 }
 
 .layer {
     background-position: center center;
-    background-size: auto;
+    background-size: 50%;
     background-repeat: no-repeat;
     width: 100%;
-    height: 3600px;
+    height: 10000px;
+    /* height: 3600px; */
+    /* height: 50%; */
     position: fixed;
     z-index: -1;
 }
 
 .layer-1 {
-    background-image: url(../assets/images/milkyway.jpg);
-    background-position: center center;
+    /* background-image: url(../assets/images/milkyway.jpg); */
+    background: url(../../../../../../Downloads/floor-gray-grey-8892-copy.jpg) no-repeat top center fixed; 
+    /* background: url(../../../../../../Downloads/astronomy-environment-evening-1743400-min.jpg) no-repeat top center fixed; */
+    /* background: url(../../../../../../Downloads/art-black-background-black-clothes-1546035.jpg) no-repeat top center fixed;  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 10000px;
+    /* background-repeat: no-repeat; */
+    /* background-position: center center; */
 }
 
 .layer-2 {
-    background-image: url(../assets/images/stars55.png);
+    /* background-image: url(../assets/images/stars20.png); */
+    background: url(../../../../../../Downloads/cutout.png) no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 10000px;
+
     /* background-position: left bottom; */
 }
 
 .layer-3 {
-    background-image: url(../assets/images/stars20.png);
+    background-image: url(../../../../../../Downloads/1293118.png);
     /* background-position: right bottom; */
 }
 
 /* .layer-4 {} */
 
-/* @media only screen and (max-width: 768px) {
-    #hero {
-        display: none;
-    }
-
-    #hero-mobile {
-        display: block;
-    }
-} */
-
-/* -------------------------------------------------------------- */
-
-.slider {
-    width: 100%;
-    height: 200px;
-    /* background-color: white; */
-}
-
-.wrapper {
-    overflow: hidden;
-    position: relative;
-    background: #222;
-    z-index: 1;
-}
-
-#items {
-    width: 10000px;
-    position: relative;
-    top: 0;
-    left: 0px;
-}
-
-#items.shifting {
-    transition: left .2s ease-out;
-}
-
-.slide {
-    width: 300px;
-    height: 200px;
-    cursor: pointer;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 1s;
-    position: relative;
-    background: #FFCF47;
-}
-
-.control {
-    position: absolute;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border-radius: 20px;
-    margin-top: -20px;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-    z-index: 2;
-}
-
-/* .prev,
-.next {
-  background-size: 22px;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.prev {
-    background-image: url(../assets/images/chevron-left-512.png);
-  left: -20px;
-}
-
-.next {
-  background-image: url(../assets/images/chevron-right-512.png);
-  right: -20px;
-} */

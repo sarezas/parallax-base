@@ -1,4 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { default as contacts } from '../assets/contacts/contacts.json';
+
+export interface Contact {
+  id: number;
+  name: string;
+  surname: string;
+  city: string;
+  email: string;
+  phome: string;
+  active: boolean;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,10 +20,19 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'parallax';
   pageYOffset = window.scrollY;
+  // @Input() contactsList = JSON.stringify(contacts);
+  @Input() contactsList = contacts;
+
+
   constructor() {}
 
   ngOnInit() {
     window.addEventListener('scroll', this.doStuff);
+    // console.log(contacts[0]);
+    // const arr: Contact[] = this.contactsList;
+    for (let i = 0; i <= contacts.length; i++) {
+      console.log(contacts[i].id);
+    }
   }
 
   doStuff() {
