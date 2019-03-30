@@ -5,7 +5,7 @@
   <div class="layer layer-4" data-type="parallax" data-depth="1.00"></div>
 </div> -->
 <div class="container">
-  <div class="row" *ngFor="let contact of contactsList">
+  <div class="row" *ngFor="let contact of cl">
     <div class="col-2">
       <p>{{ contact.name }}</p>
     </div>
@@ -26,6 +26,50 @@
     </div>
     <div class="col-1">
       <p>{{ contact.id }}</p>
+    </div>
+  </div>
+</div>
+<!-- <div class="container" *ngIf="isChecked">
+  <div class="row" *ngFor="let contact of activeList">
+    <div class="col-2">
+      <p>{{ contact.name }}</p>
+    </div>
+    <div class="col-2">
+      <p>{{ contact.surname }}</p>
+    </div>
+    <div class="col-2">
+      <p>{{ contact.city }}</p>
+    </div>
+    <div class="col-2">
+      <p>{{ contact.email }}</p>
+    </div>
+    <div class="col-2">
+      <p>{{ contact.phone }}</p>
+    </div>
+    <div class="col-1">
+      <p>{{ contact.active }}</p>
+    </div>
+    <div class="col-1">
+      <p>{{ contact.id }}</p>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="sortByName()">sort by name</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="sortBySurname()">sort by surname</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="sortByCity()">sort by city</button>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input">
+        <input type="checkbox" id="checkbox" #checkbox (change)="toggleActivity()">
+      </div>
+      <p>show active</p>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 import { default as contacts } from '../assets/contacts/contacts.json';
 
@@ -20,18 +20,63 @@ export interface Contact {
 export class AppComponent implements OnInit {
   title = 'parallax';
   pageYOffset = window.scrollY;
-  @Input() contactsList = contacts;
-
+  @Input() cl = contacts;
+  @Input() activeList = this.cl.filter(c => c.active === true);
+  // @Input() ;
+  isChecked = false;
+  @ViewChild('checkbox') checkbox: ElementRef;
 
   constructor() {}
 
   ngOnInit() {
     window.addEventListener('scroll', this.doStuff);
-    // console.log(contacts[0]);
-    // const arr: Contact[] = this.contactsList;
-    // for (let i = 0; i <= contacts.length; i++) {
-    //   console.log(contacts[i].id);
-    // }
+  }
+
+  sortByName() {
+      const clSorted = this.cl.sort((a: { name: string }, b: { name: string }) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if (nameA < nameB) { return -1; }
+        if (nameA > nameB) { return 1; }
+        return 0;
+      });
+      return this.cl = clSorted;
+  }
+
+  sortBySurname() {
+    const clSorted = this.cl.sort((a: { surname: string }, b: { surname: string }) => {
+      const nameA = a.surname.toUpperCase();
+      const nameB = b.surname.toUpperCase();
+
+      if (nameA < nameB) { return -1; }
+      if (nameA > nameB) { return 1; }
+      return 0;
+    });
+    this.cl = clSorted;
+  }
+
+  sortByCity() {
+    const clSorted = this.cl.sort((a: { city: string }, b: { city: string }) => {
+      const nameA = a.city.toUpperCase();
+      const nameB = b.city.toUpperCase();
+
+      if (nameA < nameB) { return -1; }
+      if (nameA > nameB) { return 1; }
+      return 0;
+    });
+    this.cl = clSorted;
+  }
+
+  toggleActivity() {
+    console.log(this.checkbox.nativeElement.checked);
+    this.isChecked = !this.isChecked;
+    if (this.checkbox.nativeElement.checked === true) {
+      this.isChecked = true;
+      return this.cl = this.activeList;
+    } else {
+      this.isChecked = false;
+      return this.cl = contacts;
+    }
   }
 
   doStuff() {
