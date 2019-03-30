@@ -71,5 +71,14 @@
 	"email": "stanley.reese@gmail.com",
 	"phone": "+61 1900 654 321",
 	"active": true
+	},
+	{
+	"id":9,
+	"name": "Sharis",
+	"surname": "Maris",
+	"city": "Vilnius",
+	"email": "sarezas@gmail.com",
+	"phone": "+37061910944",
+	"active": true
 	}
 ]
