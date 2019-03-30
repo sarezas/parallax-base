@@ -20,7 +20,7 @@ export interface Contact {
 export class AppComponent implements OnInit {
   title = 'parallax';
   pageYOffset = window.scrollY;
-  @Input() cl: Contact[] = contacts.slice();
+  @Input() cl: Contact[] = contacts;
   // @ViewChild('cl') ctli: ElementRef;
   @Input() al = this.cl.filter(c => c.active === true);
   isChecked = false;
@@ -31,12 +31,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     window.addEventListener('scroll', this.doStuff);
-    console.log(this.toggleActivity);
-
   }
 
   sortByName() {
     this.order = !this.order;
+    console.log(this.order);
     const aLSorted = this.al.sort((a: { name: string }, b: { name: string }) => {
       const x = a.name.toLowerCase();
       const y = b.name.toLowerCase();
@@ -100,10 +99,10 @@ export class AppComponent implements OnInit {
   toggleActivity() {
     this.isChecked = !this.isChecked;
     if (this.checkbox.nativeElement.checked === true) {
-      this.isChecked = true;
+      // this.isChecked = true;
       return this.cl = this.al;
     } else {
-      this.isChecked = false;
+      // this.isChecked = false;
       return this.cl = contacts;
     }
   }
