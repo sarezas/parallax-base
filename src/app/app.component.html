@@ -5,7 +5,7 @@
   <div class="layer layer-4" data-type="parallax" data-depth="1.00"></div>
 </div> -->
 <div class="container">
-  <div class="row" *ngFor="let contact of cl | filter:searchTerm" #cl>
+  <div class="row" *ngFor="let contact of cl | filter:searchTerm | filter:searchCity" #cl>
     <div class="col-2">
       <p>{{ contact.name }}</p>
     </div>
@@ -54,9 +54,10 @@
           <input type="text" class="form-control" id="nameInput" placeholder="Name" name="searchTerm" [(ngModel)]="searchTerm">
         </div>
         <div class="form-group col-md-4">
-          <select id="inputState" class="form-control">
+          <select id="inputState" class="form-control" [(ngModel)]="searchCity">
             <option selected>City</option>
-            <option>...</option>
+            <option>Hong Kong</option>
+            <option>London</option>
           </select>
         </div>
       </div>
